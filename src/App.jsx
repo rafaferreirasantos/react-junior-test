@@ -18,15 +18,15 @@ export default function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [running, setRunning] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const handleInputChange = ({ setFunction, event }) => {
     const { value } = event.target;
     setFunction(value)
   }
 
-  const handleSubmit = (event) => {
-    setErrorMessage('')
+  const handleSubmit = () => {
+    setErrorMessage(null)
     setRunning(true)
     const result = login({
       email,
