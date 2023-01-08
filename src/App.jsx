@@ -45,7 +45,7 @@ export default function LoginForm() {
       <div className='login-form'>
         <h1>Login Form 🐞</h1>
         {/* Coloque a mensagem de erro de login na div abaixo. Mostre a div somente se houver uma mensagem de erro. */}
-        <div className='errorMessage' style={{ display: errorMessage ? 'block' : 'none' }}>{errorMessage}</div>
+        {errorMessage && <div className='errorMessage'>{errorMessage}</div>}
         <div className='row'>
           <label htmlFor={'email'}>Email</label>
           <input id={'email'} type={'email'} autoComplete='off' value={email} onChange={(event) => { handleInputChange({ email, setFunction: setEmail, event }) }} />
