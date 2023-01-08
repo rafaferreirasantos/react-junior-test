@@ -28,16 +28,13 @@ export default function LoginForm() {
   const handleSubmit = () => {
     setErrorMessage(null)
     setRunning(true)
-    const result = login({
+    login({
       email,
       password
-    }).then((r) => {
-      alert('Login sucessful.')
-    }).catch((r) => {
-      setErrorMessage(r.message)
-    }).finally(() => {
-      setRunning(false)
     })
+      .then((r) => alert('Login sucessful.'))
+      .catch((r) => setErrorMessage(r.message))
+      .finally(() => setRunning(false))
   }
 
   return (
